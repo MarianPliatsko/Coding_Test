@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  Coding_Test
-//
-//  Created by mac on 2022-10-13.
-//
-
 import UIKit
 
 class TabBarController: UITabBarController {
@@ -18,7 +11,7 @@ class TabBarController: UITabBarController {
         viewControllers = createdViewControllers()
     }
     
-    //MARL: - Methods
+    //MARK: - Methods
 
     func createdViewControllers() -> [UIViewController] {
         let homeStoryBoard = UIStoryboard(name: "Home", bundle: nil)

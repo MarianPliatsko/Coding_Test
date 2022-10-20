@@ -1,22 +1,23 @@
-//
-//  HomeCategoryCollectionViewCell.swift
-//  Coding_Test
-//
-//  Created by mac on 2022-10-16.
-//
-
 import UIKit
 
 class HomeCategoryCollectionViewCell: UICollectionViewCell {
     
+    //MARK: - Properties
+    
     static let identifier = "HomeCategoryCollectionViewCell"
+    
+    //MARK: - Outlets
     
     @IBOutlet private var categoryImageView: UIImageView!
     @IBOutlet private var categoryName: UILabel!
     
+    //MARK: - Life cycle
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
+    
+    //MARK: - Methods
     
     static func nib() -> UINib {
         let nib = UINib(nibName: identifier, bundle: nil)
@@ -30,26 +31,15 @@ class HomeCategoryCollectionViewCell: UICollectionViewCell {
         guard let url = url else {
             return
         }
-        
-        let session = URLSession.shared
-        let dataTask = session.dataTask(with: url) { [weak self] data, response, error in
-            if error == nil && data != nil {
-                
-                if url.absoluteURL != url {
+        let dataTask = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+                guard let data = data, error == nil else {
                     return
                 }
-                
-                guard let data = data else {
-                    return
-                }
-                
                 let image = UIImage(data: data)
-                
                 DispatchQueue.main.async {
                     self?.categoryImageView.image = image
                 }
             }
-        }
         dataTask.resume()
     }
 }

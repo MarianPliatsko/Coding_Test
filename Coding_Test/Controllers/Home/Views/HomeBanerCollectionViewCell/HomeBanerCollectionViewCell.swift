@@ -1,13 +1,5 @@
-//
-//  HomeCollectionViewCell.swift
-//  Coding_Test
-//
-//  Created by mac on 2022-10-15.
-//
-
 import UIKit
 import Cosmos
-import TinyConstraints
 
 class HomeBanerCollectionViewCell: UICollectionViewCell {
     
@@ -23,7 +15,7 @@ class HomeBanerCollectionViewCell: UICollectionViewCell {
     @IBOutlet private var banerImageView: UIImageView!
     @IBOutlet private var cosmos: CosmosView!
     @IBOutlet private var nameLabel: UILabel!
-    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet private var cityLabel: UILabel!
     
     
     //MARK: - Life cycle
@@ -31,13 +23,8 @@ class HomeBanerCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         cosmosConfiguration()
-        
-        layer.cornerRadius = cornerRadius
-        layer.masksToBounds = true
-        layer.shadowRadius = 8.0
-        layer.shadowOpacity = 0.10
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOffset = CGSize(width: 0, height: 5)
+        cellConfiguratin()
+        imageViewConfiguration()
     }
     
     override func layoutSubviews() {
@@ -53,12 +40,27 @@ class HomeBanerCollectionViewCell: UICollectionViewCell {
         return nib
     }
     
-    func cosmosConfiguration() {
+    private func cosmosConfiguration() {
         cosmos.settings.updateOnTouch = false
+    }
+    
+    private func cellConfiguratin() {
+        layer.cornerRadius = cornerRadius
+        layer.masksToBounds = true
+        layer.shadowRadius = 8.0
+        layer.shadowOpacity = 0.10
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOffset = CGSize(width: 0, height: 5)
+    }
+    
+    private func imageViewConfiguration() {
+        banerImageView.contentMode = .scaleAspectFill
+        banerImageView.clipsToBounds = true
     }
     
     func configure(data: BanerModel ) {
         cosmos.rating = Double(data .rating)
+        
         nameLabel.text = data.name
         if data.width == 4 {
             cityLabel.text = data.city
@@ -69,32 +71,16 @@ class HomeBanerCollectionViewCell: UICollectionViewCell {
         guard let url = url else {
             return
         }
-        
-        let session = URLSession.shared
-        let dataTask = session.dataTask(with: url) { [weak self] data, response, error in
-            if error != nil {
+        let dataTask = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+            if let data = data, error == nil,
+               let image = UIImage(data: data) {
+                DispatchQueue.main.async {
+                    self?.banerImageView.image = image
+                }
+            } else {
                 self?.onImageLoadFailed?()
             }
-            
-            guard data != nil else {
-                return
-            }
-            
-            if url.absoluteURL != url {
-                return
-            }
-            
-            guard let data = data else {
-                return
-            }
-            
-            let image = UIImage(data: data)
-            
-            DispatchQueue.main.async {
-                self?.banerImageView.image = image
-            }
         }
-        
         dataTask.resume()
     }
 }

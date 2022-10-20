@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  Coding_Test
-//
-//  Created by mac on 2022-10-13.
-//
-
 import UIKit
 
 @UIApplicationMain

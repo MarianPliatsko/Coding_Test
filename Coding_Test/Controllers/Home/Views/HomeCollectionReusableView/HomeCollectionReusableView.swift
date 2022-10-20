@@ -1,10 +1,3 @@
-//
-//  HomeCollectionReusableView.swift
-//  Coding_Test
-//
-//  Created by mac on 2022-10-15.
-//
-
 import UIKit
 
 class HomeCollectionReusableView: UICollectionReusableView {
@@ -42,7 +35,6 @@ class HomeCollectionReusableView: UICollectionReusableView {
             let element = element.records
             self.categotyModelData = element    
         }
-        
         headerCollectionView.reloadData()
     }
 }

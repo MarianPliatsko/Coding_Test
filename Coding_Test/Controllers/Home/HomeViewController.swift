@@ -1,10 +1,3 @@
-//
-//  HomeViewController.swift
-//  Coding_Test
-//
-//  Created by mac on 2022-10-13.
-//
-
 import UIKit
 import DropDown
 
@@ -13,6 +6,8 @@ class HomeViewController: UIViewController {
     //MARK: - Properties
     
     private let dropDown = DropDown()
+
+    private var isShowing: Bool = false
     
     private var listOfCityContainer: [CityContainer] = []
     private var listOfCityModel: [CityModel] = []
@@ -21,13 +16,13 @@ class HomeViewController: UIViewController {
     
     private var banerDataContainer: [BanerContainer] = []
     private var banerDataModel: [BanerModel] = []
-    private var filteredBanerDataModel: [BanerModel] = []
     
     //MARK: - Outlets
     
     @IBOutlet private var homeCollectionView: UICollectionView!
     @IBOutlet private var menuButton: UIButton!
-    @IBOutlet private var listOfCitiesLabel: UILabel!
+    @IBOutlet private var dropDownLabel: UILabel!
+    @IBOutlet private var dropDownImage: UIImageView!
     
     //MARK: - Lifecycle
     
@@ -43,12 +38,13 @@ class HomeViewController: UIViewController {
         getBanerData()
         configDropDown()
         getCategoryData()
+        dropDownImage.image = UIImage(systemName: "chevron.down")
     }
     
     //MARK: - Actions
     
-    @IBAction func listOfCitiesAction(_ sender: Any) {
-        getCityListData()
+    @IBAction func dropDownButton(_ sender: Any) {
+        showDropDown()
     }
     
     @IBAction func detailButton(_ sender: Any) {
@@ -62,6 +58,7 @@ class HomeViewController: UIViewController {
             case.success(let data):
                 self?.banerDataContainer = [data]
                 self?.updateUIBanner()
+                
             case .failure(let error):
                 if error == .cityNotFound {
                     print("city not founded")
@@ -99,14 +96,15 @@ class HomeViewController: UIViewController {
         }
     }
     
-    private func getCityListData() {
+    private func showDropDown() {
         CityDataRepository.shared.getCityList { [weak self] data in
             
             switch data {
             case.success(let data):
                 self?.listOfCityContainer = [data]
-                self?.updateUICity()
+                self?.updateDropDownUI()
                 self?.dropDown.show()
+                
             case.failure(let error):
                 if error == .cityNotFound {
                     print("city not founded")
@@ -118,7 +116,7 @@ class HomeViewController: UIViewController {
         }
     }
     
-    private func updateUICity() {
+    private func updateDropDownUI() {
         for element in self.listOfCityContainer {
             let element = element.records
             self.listOfCityModel = element
@@ -128,14 +126,14 @@ class HomeViewController: UIViewController {
             dropDown.dataSource = [element.name]
             dropDown.selectionAction = { [weak self]
                 (index: Int, item: String) in
-                self?.listOfCitiesLabel.text = self?.dropDown.dataSource[index]
+                self?.dropDownLabel.text = self?.dropDown.dataSource[index]
             }
         }
     }
     
     private func configDropDown() {
-        self.listOfCitiesLabel.text = "Select a city"
-        dropDown.anchorView = listOfCitiesLabel
+        self.dropDownLabel.text = "Select a city"
+        dropDown.anchorView = dropDownLabel
         dropDown.bottomOffset = CGPoint(x: 0, y:(dropDown.anchorView?.plainView.bounds.height)!)
     }
 }
@@ -151,16 +149,15 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         guard let cell = homeCollectionView.dequeueReusableCell(withReuseIdentifier: HomeBanerCollectionViewCell.identifier, for: indexPath) as? HomeBanerCollectionViewCell else {
             return UICollectionViewCell()
         }
-        
         cell.onImageLoadFailed = {[weak self] in
-            print(indexPath.row)
             DispatchQueue.main.async {
                 self?.banerDataModel[indexPath.row].imageFailed = true
-                self?.homeCollectionView.reloadData()
+                collectionView.collectionViewLayout.invalidateLayout()
             }
         }
-        cell.configure(data: self.banerDataModel[indexPath.row])
         
+        cell.configure(data: self.banerDataModel[indexPath.row])
+        print("cells:\(cell)")
         return cell
     }
     
@@ -181,6 +178,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let screenWidth = view.frame.size.width
         let screenHeight = 143.0
         
+        if item.imageFailed ?? false {
+            return .zero
+        }
+        
         switch item.width {
         case 4:
             width = screenWidth
@@ -191,6 +192,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         }
         return CGSize(width: width, height: screenHeight)
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: collectionView.frame.size.width, height: 80)

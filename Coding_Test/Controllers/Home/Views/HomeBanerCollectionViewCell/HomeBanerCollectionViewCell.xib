@@ -17,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="383" height="163"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cMM-4N-xRE">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cMM-4N-xRE">
                         <rect key="frame" x="0.0" y="0.0" width="383" height="163"/>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pyA-7S-A08" customClass="CosmosView" customModule="Cosmos">
@@ -99,6 +99,11 @@
             <point key="canvasLocation" x="142.75362318840581" y="100.78125"/>
         </collectionViewCell>
     </objects>
+    <designables>
+        <designable name="pyA-7S-A08">
+            <size key="intrinsicContentSize" width="84" height="16"/>
+        </designable>
+    </designables>
     <resources>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

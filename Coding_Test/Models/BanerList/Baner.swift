@@ -1,10 +1,3 @@
-//
-//  Baner.swift
-//  Coding_Test
-//
-//  Created by mac on 2022-10-15.
-//
-
 import Foundation
 
 struct BanerContainer: Decodable {
