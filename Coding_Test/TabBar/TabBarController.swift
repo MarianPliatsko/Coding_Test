@@ -8,6 +8,8 @@
 import UIKit
 
 class TabBarController: UITabBarController {
+    
+    //MARK: - Life cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,6 +17,8 @@ class TabBarController: UITabBarController {
         tabBar.tintColor = .label
         viewControllers = createdViewControllers()
     }
+    
+    //MARL: - Methods
 
     func createdViewControllers() -> [UIViewController] {
         let homeStoryBoard = UIStoryboard(name: "Home", bundle: nil)

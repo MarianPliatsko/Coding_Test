@@ -30,7 +30,7 @@ class HomeCollectionReusableView: UICollectionReusableView {
         headerCollectionView.register(HomeCategoryCollectionViewCell.nib(), forCellWithReuseIdentifier: HomeCategoryCollectionViewCell.identifier)
     }
     
-    
+    //MARK: - Methods
     
     static func nib() -> UINib {
         let nib = UINib(nibName: identifier, bundle: nil)
@@ -64,7 +64,7 @@ extension HomeCollectionReusableView: UICollectionViewDelegate, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 85, height: collectionView.frame.size.height)
+        return CGSize(width: 90, height: collectionView.frame.size.height)
     }
 }
 

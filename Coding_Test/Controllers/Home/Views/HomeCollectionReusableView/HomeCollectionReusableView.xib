@@ -27,10 +27,10 @@
             </subviews>
             <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
             <constraints>
-                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="uDc-Nh-QE8" secondAttribute="trailing" id="NaM-XT-iho"/>
-                <constraint firstItem="uDc-Nh-QE8" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="YzC-M2-ZdC"/>
-                <constraint firstItem="VXr-Tz-HHm" firstAttribute="bottom" secondItem="uDc-Nh-QE8" secondAttribute="bottom" id="do2-43-Wse"/>
-                <constraint firstItem="uDc-Nh-QE8" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="kXb-z7-LG8"/>
+                <constraint firstItem="uDc-Nh-QE8" firstAttribute="bottom" secondItem="VXr-Tz-HHm" secondAttribute="bottom" id="3sl-5g-Nk5"/>
+                <constraint firstItem="uDc-Nh-QE8" firstAttribute="trailing" secondItem="VXr-Tz-HHm" secondAttribute="trailing" id="EAn-zz-Mpr"/>
+                <constraint firstItem="uDc-Nh-QE8" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="Oqs-h0-azq"/>
+                <constraint firstItem="uDc-Nh-QE8" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="f0P-QG-t91"/>
             </constraints>
             <connections>
                 <outlet property="headerCollectionView" destination="uDc-Nh-QE8" id="aDC-M1-o5r"/>

@@ -14,7 +14,6 @@
 		04C26F2528FB17DE009A8742 /* BanerAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C26F2428FB17DE009A8742 /* BanerAPIService.swift */; };
 		04C26F2828FB1B18009A8742 /* HomeCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C26F2628FB1B18009A8742 /* HomeCollectionReusableView.swift */; };
 		04C26F2928FB1B18009A8742 /* HomeCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C26F2728FB1B18009A8742 /* HomeCollectionReusableView.xib */; };
-		04C26F2E28FB219B009A8742 /* UIView+fromNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C26F2D28FB219B009A8742 /* UIView+fromNib.swift */; };
 		04C26F3228FB3DBC009A8742 /* HomeBanerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C26F3028FB3DBC009A8742 /* HomeBanerCollectionViewCell.swift */; };
 		04C26F3328FB3DBC009A8742 /* HomeBanerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C26F3128FB3DBC009A8742 /* HomeBanerCollectionViewCell.xib */; };
 		04C26F3928FC55CE009A8742 /* HomeCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C26F3728FC55CE009A8742 /* HomeCategoryCollectionViewCell.swift */; };
@@ -32,7 +31,6 @@
 		04C6317E28F8903F001657ED /* Order.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04C6317D28F8903F001657ED /* Order.storyboard */; };
 		04C6318028F89056001657ED /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04C6317F28F89056001657ED /* Account.storyboard */; };
 		04F55B3528F8AF2C00D18C9D /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F55B3428F8AF2C00D18C9D /* SignIn.storyboard */; };
-		04F55B3728F8AF5000D18C9D /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F55B3628F8AF5000D18C9D /* SignInViewController.swift */; };
 		04F55B3A28F904C300D18C9D /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F55B3928F904C300D18C9D /* City.swift */; };
 		485F26784B14EFC855A40F14 /* Pods_Coding_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A443C1B509B27AE8830932A6 /* Pods_Coding_Test.framework */; };
 /* End PBXBuildFile section */
@@ -45,7 +43,6 @@
 		04C26F2428FB17DE009A8742 /* BanerAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanerAPIService.swift; sourceTree = "<group>"; };
 		04C26F2628FB1B18009A8742 /* HomeCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionReusableView.swift; sourceTree = "<group>"; };
 		04C26F2728FB1B18009A8742 /* HomeCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionReusableView.xib; sourceTree = "<group>"; };
-		04C26F2D28FB219B009A8742 /* UIView+fromNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+fromNib.swift"; sourceTree = "<group>"; };
 		04C26F3028FB3DBC009A8742 /* HomeBanerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBanerCollectionViewCell.swift; sourceTree = "<group>"; };
 		04C26F3128FB3DBC009A8742 /* HomeBanerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeBanerCollectionViewCell.xib; sourceTree = "<group>"; };
 		04C26F3728FC55CE009A8742 /* HomeCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -65,7 +62,6 @@
 		04C6317D28F8903F001657ED /* Order.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Order.storyboard; sourceTree = "<group>"; };
 		04C6317F28F89056001657ED /* Account.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
 		04F55B3428F8AF2C00D18C9D /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
-		04F55B3628F8AF5000D18C9D /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		04F55B3928F904C300D18C9D /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		12C226FE8F538DA51382D13E /* Pods-Coding_Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coding_Test.debug.xcconfig"; path = "Target Support Files/Pods-Coding_Test/Pods-Coding_Test.debug.xcconfig"; sourceTree = "<group>"; };
 		5BB9679F47649CDD93D96EE0 /* Pods-Coding_Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coding_Test.release.xcconfig"; path = "Target Support Files/Pods-Coding_Test/Pods-Coding_Test.release.xcconfig"; sourceTree = "<group>"; };
@@ -102,30 +98,6 @@
 			path = BanerList;
 			sourceTree = "<group>";
 		};
-		04C26F2A28FB2161009A8742 /* BusinessLogic */ = {
-			isa = PBXGroup;
-			children = (
-				04C26F2B28FB2171009A8742 /* Extension */,
-			);
-			path = BusinessLogic;
-			sourceTree = "<group>";
-		};
-		04C26F2B28FB2171009A8742 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				04C26F2C28FB2183009A8742 /* View */,
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
-		04C26F2C28FB2183009A8742 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				04C26F2D28FB219B009A8742 /* UIView+fromNib.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		04C6314728F88BE8001657ED = {
 			isa = PBXGroup;
 			children = (
@@ -148,8 +120,6 @@
 			isa = PBXGroup;
 			children = (
 				06F6495B2900643600F7A029 /* PresentationLogic */,
-				04C26F2A28FB2161009A8742 /* BusinessLogic */,
-				04F55B3628F8AF5000D18C9D /* SignInViewController.swift */,
 				04C6316728F88CA0001657ED /* TabBar */,
 				04C6316B28F88E26001657ED /* Controllers */,
 				04F55B3828F9041E00D18C9D /* Models */,
@@ -428,7 +398,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04C26F2E28FB219B009A8742 /* UIView+fromNib.swift in Sources */,
 				04C26F3928FC55CE009A8742 /* HomeCategoryCollectionViewCell.swift in Sources */,
 				04C26F2328FB17CA009A8742 /* CategoryAPIService.swift in Sources */,
 				04C6315828F88BE8001657ED /* TabBarController.swift in Sources */,
@@ -439,7 +408,6 @@
 				04C26F1D28FB0296009A8742 /* Baner.swift in Sources */,
 				04C6317A28F88FAA001657ED /* AccountViewController.swift in Sources */,
 				04C26F3228FB3DBC009A8742 /* HomeBanerCollectionViewCell.swift in Sources */,
-				04F55B3728F8AF5000D18C9D /* SignInViewController.swift in Sources */,
 				04C26F2128FB17AE009A8742 /* CityAPIService.swift in Sources */,
 				04C26F1828FA7D07009A8742 /* Category.swift in Sources */,
 				04C6317628F88F8A001657ED /* WhatsHotViewController.swift in Sources */,

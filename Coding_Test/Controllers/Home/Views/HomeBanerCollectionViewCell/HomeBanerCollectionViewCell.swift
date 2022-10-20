@@ -11,13 +11,22 @@ import TinyConstraints
 
 class HomeBanerCollectionViewCell: UICollectionViewCell {
     
+    //MARK: - Properties
+    
     static let identifier = "HomeBanerCollectionViewCell"
     var onImageLoadFailed: (( ) -> Void)?
     let homeVC = HomeViewController()
     let cornerRadius = 5.0
     
+    //MARK: - Outlets
+    
     @IBOutlet private var banerImageView: UIImageView!
     @IBOutlet private var cosmos: CosmosView!
+    @IBOutlet private var nameLabel: UILabel!
+    @IBOutlet weak var cityLabel: UILabel!
+    
+    
+    //MARK: - Life cycle
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,6 +46,8 @@ class HomeBanerCollectionViewCell: UICollectionViewCell {
                                          cornerRadius: cornerRadius).cgPath
     }
     
+    //MARK: - Methods
+    
     static func nib() -> UINib {
         let nib = UINib(nibName: identifier, bundle: nil)
         return nib
@@ -48,6 +59,10 @@ class HomeBanerCollectionViewCell: UICollectionViewCell {
     
     func configure(data: BanerModel ) {
         cosmos.rating = Double(data .rating)
+        nameLabel.text = data.name
+        if data.width == 4 {
+            cityLabel.text = data.city
+        }
         
         let baseUrl = "https://res.cloudinary.com/goopterdev"
         let url = URL(string: baseUrl+data.imageUrl)

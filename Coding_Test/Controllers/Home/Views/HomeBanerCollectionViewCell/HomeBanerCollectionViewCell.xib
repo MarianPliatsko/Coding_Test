@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -22,6 +23,10 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pyA-7S-A08" customClass="CosmosView" customModule="Cosmos">
                         <rect key="frame" x="18" y="137" width="84" height="16"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="84" id="4BL-z6-Wv8"/>
+                            <constraint firstAttribute="height" constant="16" id="eNQ-zJ-HYR"/>
+                        </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
                                 <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -49,28 +54,54 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AeY-py-riv">
+                        <rect key="frame" x="10" y="0.0" width="363" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="YQw-05-TUf"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" systemColor="opaqueSeparatorColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZW6-6n-FQS">
+                        <rect key="frame" x="102" y="128" width="271" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="buQ-sV-Asa"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" systemColor="opaqueSeparatorColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="pyA-7S-A08" secondAttribute="bottom" constant="10" id="0Og-T7-ncL"/>
                 <constraint firstAttribute="trailing" secondItem="cMM-4N-xRE" secondAttribute="trailing" id="3nG-yj-sdA"/>
+                <constraint firstAttribute="trailing" secondItem="ZW6-6n-FQS" secondAttribute="trailing" constant="10" id="6GS-OL-DvO"/>
                 <constraint firstItem="cMM-4N-xRE" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="CLx-kL-flF"/>
+                <constraint firstAttribute="bottom" secondItem="ZW6-6n-FQS" secondAttribute="bottom" constant="10" id="QnR-I2-0qc"/>
                 <constraint firstItem="pyA-7S-A08" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="18" id="W3W-el-4U9"/>
+                <constraint firstItem="AeY-py-riv" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="dml-p0-w0a"/>
+                <constraint firstAttribute="trailing" secondItem="AeY-py-riv" secondAttribute="trailing" constant="10" id="ivc-V0-MfG"/>
                 <constraint firstAttribute="bottom" secondItem="cMM-4N-xRE" secondAttribute="bottom" id="oZM-FF-2Sv"/>
+                <constraint firstItem="ZW6-6n-FQS" firstAttribute="leading" secondItem="pyA-7S-A08" secondAttribute="trailing" id="s8y-dl-cWk"/>
                 <constraint firstItem="cMM-4N-xRE" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="uGV-aT-8Wv"/>
+                <constraint firstItem="AeY-py-riv" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="vbY-ti-7fH"/>
             </constraints>
             <size key="customSize" width="383" height="163"/>
             <connections>
                 <outlet property="banerImageView" destination="cMM-4N-xRE" id="59V-jC-c6I"/>
+                <outlet property="cityLabel" destination="ZW6-6n-FQS" id="mG0-qF-bQ1"/>
                 <outlet property="cosmos" destination="pyA-7S-A08" id="sm4-80-Lad"/>
+                <outlet property="nameLabel" destination="AeY-py-riv" id="Npt-gv-yqs"/>
             </connections>
             <point key="canvasLocation" x="142.75362318840581" y="100.78125"/>
         </collectionViewCell>
     </objects>
-    <designables>
-        <designable name="pyA-7S-A08">
-            <size key="intrinsicContentSize" width="84" height="16"/>
-        </designable>
-    </designables>
+    <resources>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
