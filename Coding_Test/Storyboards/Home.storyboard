@@ -112,10 +112,10 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Mc9-yS-eGa" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="g5p-Mn-3pp"/>
+                            <constraint firstItem="Mc9-yS-eGa" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="g5p-Mn-3pp"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Mc9-yS-eGa" secondAttribute="bottom" id="ljv-ug-MFk"/>
                             <constraint firstItem="Mc9-yS-eGa" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="wEg-uU-4xx"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Mc9-yS-eGa" secondAttribute="trailing" id="xTX-oa-e5d"/>
+                            <constraint firstAttribute="trailing" secondItem="Mc9-yS-eGa" secondAttribute="trailing" id="xTX-oa-e5d"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hrl-Ps-gfP"/>
