@@ -15,7 +15,11 @@ class HomeViewController: UIViewController {
     private var categoryContainerData: [CategoryContainer] = []
     
     private var banerDataContainer: [BanerContainer] = []
-    private var banerDataModel: [BanerModel] = []
+    private var banerDataModel: [BanerModel] = [] {
+        didSet {
+            banerDataModel.sort(by: {$0.width < $1.width})
+        }
+    }
     
     //MARK: - Outlets
     
@@ -39,7 +43,7 @@ class HomeViewController: UIViewController {
         configDropDown()
         getCategoryData()
         dropDownImage.image = UIImage(systemName: "chevron.down")
-    }
+}
     
     //MARK: - Actions
     
